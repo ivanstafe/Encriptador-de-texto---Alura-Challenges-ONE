@@ -1,0 +1,650 @@
+/* Estilos generales */
+body {
+    font-family: monospace;
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+}
+
+/* Estilos para la franja centrada */
+.strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh; 
+    background: url('../images/outer_space_4k.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1; 
+}
+
+
+
+/* Estilos para el icono Alura */
+.corner-icon {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.corner-icon img {
+    width: 80px;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+
+
+}
+
+/* Estilos para el encriptador */
+.encriptador {
+    flex: 1;
+    max-width: 45%;
+    border-radius: 5px;
+}
+
+/* Estilos para el campo de texto de entrada */
+#inputText {
+    width: 577px;
+    height: 48px;
+    font-size: 25px;
+    background-color: transparent;
+    resize: none;
+    border: none;
+    outline: none;
+    color: #c4c1c1;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    overflow: auto; 
+}
+
+/* Estilos para el textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    padding-bottom: 20px;   
+    padding-right: 50px; 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+
+/* Estilos para el mensaje de advertencia */
+.warning-message {
+    max-width: 500px;
+    margin: 0 auto;
+    bottom: 70px;
+    left: 0;
+    color: #FFA500;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.warning-message i {
+    color: #FFA500;
+    margin-right: 1px;
+    margin-bottom: 20px;
+}
+
+.warning-message span {
+    font-size: 14px;
+    color: #c4c1c1;
+}
+
+/* Estilos para el placeholder del inputText */
+#inputText::placeholder {
+    color: #c4c1c1;
+    opacity: 0.7;
+}
+
+/* Estilos para el resultado*/
+.resultado {
+    width: 40%;
+    height: 600px;
+    padding: 20px;
+    background-color: #ffffff6c;
+    overflow: hidden;
+    position: relative;
+    animation: glow 2s infinite alternate;
+    
+    
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(0, 123, 255, 0.7), 0 0 60px rgba(0, 123, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(0, 123, 255, 1), 0 0 80px rgba(0, 123, 255, 0.7);
+    }
+}
+
+/* Efecto de remolino para la imagen*/
+.imageContainer img {
+    max-width: 100%;
+    height: auto;
+    visibility: visible;
+    transition: transform 0.3s ease-out;
+}
+
+.imageContainer:hover img {
+    transform: rotate(10deg);
+}
+
+
+
+/* Estilos para el contenedor de salida */
+.outputContainer {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+/* Estilos para los párrafos del mensaje */
+.message-container {
+    text-align: center;
+}
+
+.message-container p {
+    margin: 8px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para el outputText */
+#outputText {
+    text-align: center;
+    font-size: 25px;
+    background-color: transparent;
+    resize: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    width: 100%;
+    color: #333;
+    overflow: auto; 
+
+}
+
+
+
+#outputContainer ::placeholder{
+
+color: #333;
+}
+
+
+
+/* Estilos para los botones */
+.button-container {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.encriptar-btn,
+.desencriptar-btn,
+.copy-btn,
+.reset-btn {
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.encriptar-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.desencriptar-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.copy-btn {
+    background-color: #ffc107; 
+    color: white;
+}
+
+
+
+
+
+
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(85%);
+}
+
+.encriptar-btn:hover {
+    background-color: #0056b3;
+}
+
+.desencriptar-btn:hover {
+    background-color: #218838;
+}
+
+.copy-btn:hover {
+    background-color: #e0a800; 
+}
+
+.reset-btn:hover {
+    background-color: #c82333;
+}
+
+
+.outputContainer {
+    margin: 8px 0;
+
+
+}
+
+
+/* Media queries */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .encriptador {
+        position: relative;
+        bottom: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .resultado {
+        display: none;
+    }
+
+    .reset-btn {
+        margin-top: 8px;
+    }
+
+    #outputContainerCopy {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container button {
+        margin: 5px;
+        font-size: 2.5vw;
+    }
+
+    .button-wrapperCopy button {
+        font-size: 2.5vw;
+    }
+
+    .imageContainer img {
+        display: none;
+    }
+
+    .warning-message span,
+    .warning-message {
+        font-size: 1.5vw;
+    }
+
+    .message-container p {
+        font-size: 3vw;
+    }
+
+    .corner-icon img {
+        width: 10vw;
+    }
+
+    #inputText {
+        margin-top: 5vw;
+        width: 100%;
+        font-size: 2.5vw;
+    }
+
+    #outputTextCopy {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        font-size: 2vw;
+        background-color: transparent;
+        resize: none;
+        color: #c4c1c1;
+        outline: none;
+        border: none;
+        overflow: auto;
+    }
+
+    #outputContainerCopy::placeholder {
+        color: white;
+        font-size: 1.8vw;
+    }
+
+    .outputContainer {
+        position: relative;
+    }
+
+    .outputContainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .encriptador {
+        position: relative;
+        bottom: 45px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .resultado {
+        display: none;
+    }
+
+    .reset-btn {
+        margin-top: 8px;
+    }
+
+    #outputContainerCopy {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container button {
+        margin: 5px;
+        font-size: 2vw;
+    }
+
+    .button-wrapperCopy button {
+        font-size: 2vw;
+    }
+
+    .imageContainer img {
+        display: none;
+    }
+
+    .warning-message span,
+    .warning-message {
+        font-size: 1.5vw;
+    }
+
+    .message-container p {
+        font-size: 3vw;
+    }
+
+    .corner-icon img {
+        width: 10vw;
+    }
+
+    #inputText {
+        margin-top: 5vw;
+        width: 100%;
+        font-size: 2.5vw;
+    }
+
+    #outputTextCopy {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        font-size: 2vw;
+        background-color: transparent;
+        resize: none;
+        color: #c4c1c1;
+        outline: none;
+        border: none;
+        overflow: auto;
+    }
+
+    #outputContainerCopy::placeholder {
+        color: white;
+        font-size: 1.8vw;
+    }
+
+    .outputContainer {
+        position: relative;
+    }
+
+    .outputContainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .resultado {
+        display: none;
+    }
+
+    .button-wrapperCopy {
+        display: flex;
+    }
+
+    .button-wrapperCopy button {
+        margin: 5px;
+        font-size: 1.5vw;
+    }
+
+    #outputContainerCopy {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #outputTextCopy {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        font-size: 2vw;
+        background-color: transparent;
+        resize: none;
+        color: #c4c1c1;
+        outline: none;
+        border: none;
+        overflow: auto;
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .button-container button {
+        margin: 5px;
+        font-size: 1.5vw;
+    }
+
+    .imageContainer img {
+        display: none;
+    }
+
+    #inputText {
+        margin-top: 5vw;
+        width: 100%;
+        font-size: 2.5vw;
+    }
+
+    #outputContainerCopy::placeholder {
+        color: white;
+        font-size: 1.8vw;
+    }
+
+    .outputContainer {
+        position: relative;
+    }
+
+    .outputContainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .warning-message span,
+    .warning-message {
+        font-size: 1.5vw;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .resultado {
+        display: none;
+    }
+
+    .button-wrapperCopy {
+        display: flex;
+    }
+
+    .button-wrapperCopy button {
+        margin: 5px;
+        font-size: 1.5vw;
+    }
+
+    #outputContainerCopy {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .button-container button {
+        margin: 5px;
+        font-size: 1.5vw;
+    }
+
+    .imageContainer img {
+        display: none;
+    }
+
+    #inputText {
+        margin-top: 5vw;
+        width: 100%;
+        font-size: 2.5vw;
+    }
+
+    #outputTextCopy {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        font-size: 2vw;
+        background-color: transparent;
+        resize: none;
+        color: #c4c1c1;
+        outline: none;
+        border: none;
+        overflow: auto;
+    }
+
+    #outputContainerCopy::placeholder {
+        color: white;
+        font-size: 1.8vw;
+    }
+
+    .outputContainer {
+        position: relative;
+    }
+
+    .outputContainer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .warning-message span,
+    .warning-message {
+        font-size: 1.5vw;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #outputTextCopy {
+        display: none;
+    }
+
+    .button-wrapperCopy {
+        display: none;
+    }
+}

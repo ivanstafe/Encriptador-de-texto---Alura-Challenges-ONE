@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto - Alura Challenges ONE</title>
+    <link rel="shortcut icon" href="assets/images/icon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+        <div class="corner-icon">
+            <img src="assets/images/icon.png" alt="Icono">
+        </div>
+
+        <div class="strip">
+
+        </div>
+    <div class="container">
+
+        <div class="encriptador">
+            <div class="inputContainer">
+                <textarea id="inputText" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Solo letras minúsculas y sin acento.</span>
+                </div>
+
+                
+                    <div class="button-container">
+                        <button onclick="encrypt()" class="encriptar-btn"><i class="fas fa-lock"></i> Encriptar</button>
+                        <button onclick="decrypt()" class="desencriptar-btn"><i class="fas fa-unlock"></i> Desencriptar</button>
+                    </div>
+                    <div class="outputContainer" id="outputContainerCopy">
+                        <textarea id="outputTextCopy" readonly placeholder="El resultado se mostrará aquí"></textarea><br>
+                        <div class="button-wrapperCopy">
+                            <button id="copyBtnCopy" onclick="copyToClipboard()" class="copy-btn" style="display: none;"><i class="far fa-copy"></i> Copiar</button>
+                            <button id="resetBtnCopy" onclick="resetPage()" class="reset-btn" style="display: none;"><i class="fas fa-sync"></i> Reiniciar</button>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="resultado" id="resultado">
+            <div class="imageContainer">
+                <img src="assets/images/Muñeco.png" alt="Imagen Inicial">
+            </div>
+            <div class="outputContainer" id="outputContainer">
+                <textarea id="outputText" readonly placeholder="El resultado se mostrará aquí"></textarea><br>
+                <div class="button-wrapper">
+                    <button id="copyBtn" onclick="copyToClipboard()" class="copy-btn" style="display: none;"><i class="far fa-copy"></i> Copiar</button>
+                    <button id="resetBtn" onclick="resetPage()" class="reset-btn" style="display: none;"><i class="fas fa-sync"></i> Reiniciar</button>
+                </div>
+            </div>
+            
+            <div class="message-container">
+                <strong>
+                    <p>Ningún mensaje fue <br>encontrado.</p>
+                </strong>
+                <p>Ingresa el texto que desees encriptar <br>o desencriptar.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/encriptador.js"></script>
+</body>
+
+</html>
