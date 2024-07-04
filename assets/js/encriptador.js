@@ -39,6 +39,7 @@ function encrypt() {
         document.getElementById('outputTextCopy').value = encryptedText;
         document.getElementById('copyBtnCopy').style.display = 'inline-block'; 
         document.getElementById('resetBtnCopy').style.display = 'inline-block'; 
+        document.getElementById('encryptedMessage').style.display = 'inline-block';
     } else {
         alert('Ingrese un texto válido para encriptar.');
     }
@@ -90,6 +91,7 @@ function decrypt() {
         document.getElementById('outputTextCopy').value = decryptedText;
         document.getElementById('copyBtnCopy').style.display = 'inline-block'; 
         document.getElementById('resetBtnCopy').style.display = 'inline-block'; 
+        document.getElementById('encryptedMessage').style.display = 'block';
     } else {
         alert('Ingrese un texto válido para desencriptar.');
     }
